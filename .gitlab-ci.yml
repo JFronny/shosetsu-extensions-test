@@ -80,9 +80,9 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -r src public/
-    - cp -r lib public/
-    - cp -r icons public/
+    - '[ -d src ] && cp -r src public/'
+    - '[ -d lib ] && cp -r lib public/'
+    - '[ -d icons ] && cp -r icons public/'
     - cp index.json public/
   pages:
     expire_in: 1 week

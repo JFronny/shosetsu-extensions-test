@@ -54,9 +54,9 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           mkdir public
-          cp -r src public/
-          cp -r lib public/
-          cp -r icons public/
+          [ -d src ] && cp -r src public/
+          [ -d lib ] && cp -r lib public/
+          [ -d icons ] && cp -r icons public/
           cp index.json public/
       - name: Setup Pages
         if: github.event_name != 'pull_request'
